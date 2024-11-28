@@ -2,3 +2,4 @@
 *.pickle
 *.iter
 *.toml
+/*__pycache__*/
