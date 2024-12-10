@@ -52,10 +52,6 @@ chosen_alternative = (travel_mode)
 # public transport travel time
 dur_pt = dur_pt_access + dur_pt_int*pt_interchanges + dur_pt_bus + dur_pt_rail
 
-# car availability
-has_a_car = car_ownership != 0
-
-
 # Parameters
 constant_2 = Beta('constant_2', 0, None, None, 0)
 constant_3 = Beta('constant_3', 0, None, None, 0)
@@ -87,7 +83,7 @@ opt3_1 = (
 )
 # car 
 opt4_1 = (
-    has_a_car * (constant_4
+    (constant_4
     + beta_cost * (cost_driving_fuel + driving_traffic_percent*cost_driving_ccharge)
     + beta_travel_time_4 * dur_driving)
 )
