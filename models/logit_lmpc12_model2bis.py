@@ -53,6 +53,10 @@ chosen_alternative = (travel_mode)
 # public transport travel time
 dur_pt = dur_pt_access + dur_pt_int*pt_interchanges + dur_pt_bus + dur_pt_rail
 
+# car availability
+has_a_car = car_ownership != 0
+
+
 # Parameters
 constant_2 = Beta('constant_2', 0, None, None, 0)
 constant_3 = Beta('constant_3', 0, None, None, 0)
@@ -66,29 +70,30 @@ beta_travel_time_2 = Beta('beta_travel_time_2', 0, None, None, 0)
 beta_travel_time_3 = Beta('beta_travel_time_3', 0, None, None, 0)
 beta_travel_time_4 = Beta('beta_travel_time_4', 0, None, None, 0)
 
-# socioeconomic characteristic bis : genre
+# socioeconomic characteristic bis : purpose
 
-genre = Variable('female')
+purpose = Variable('purpose')
 
-genre_segmentation = DiscreteSegmentationTuple(
-    variable=genre, mapping={1: 'female', 2:'other'})
+purpose_segmentation = DiscreteSegmentationTuple(variable=purpose, mapping={1: 'home-based work',2: 'home-based education', 3: 'home-based other',4: 'employers business', 5: 'non-homebased other'})
+
+new_purpose_segmentation = DiscreteSegmentationTuple(variable=purpose, mapping={1: 'work-education-related',2: 'work-education-related', 3: 'non-work-education-related',4: 'work-education-related', 5: 'non-work-education-related'})
 
 segmented_constant_2 = segmented_beta(
     constant_2,
     [
-        genre_segmentation,
+        new_purpose_segmentation,
     ],
 )
 segmented_constant_3 = segmented_beta(
     constant_3,
     [
-        genre_segmentation,
+        new_purpose_segmentation,
     ],
 )
 segmented_constant_4 = segmented_beta(
     constant_4,
     [
-        genre_segmentation,
+        new_purpose_segmentation,
     ],
 )
 
