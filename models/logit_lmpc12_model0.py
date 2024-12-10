@@ -91,3 +91,4 @@ logprob_base = loglogit(V_base, None, chosen_alternative)
 biogeme_base = bio.BIOGEME(database, logprob_base)
 biogeme_base.modelName = 'logit_lpmc12_base'
 results = biogeme_base.estimate()
+
