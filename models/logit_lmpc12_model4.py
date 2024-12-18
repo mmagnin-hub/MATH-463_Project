@@ -7,16 +7,11 @@ Tue Nov 28 20:00 2024
 
 '''
 
-import pandas as pd
-import biogeme.database as db
-import biogeme.biogeme as bio
-from biogeme.expressions import Beta, Variable
-from biogeme.biogeme_logging import get_screen_logger, INFO
+from biogeme.expressions import Beta
 from biogeme.nests import (
     OneNestForCrossNestedLogit,
     NestsForCrossNestedLogit,
 )
-from biogeme.models import lognested, logcnl
 from biogeme.nests import (
     OneNestForNestedLogit,
     NestsForNestedLogit,
@@ -56,9 +51,3 @@ nest_private = OneNestForCrossNestedLogit(
 nests_cross = NestsForCrossNestedLogit(
     choice_set=[1, 2, 3, 4], tuple_of_nests=(nest_motorized, nest_private)
 )
-
-
-# logit model
-#logprob_cnl = logcnl(V_1, av, nests, chosen_alternative)
-#biogeme_cnl = bio.BIOGEME(database, logprob_cnl)
-#biogeme_cnl.modelName = 'logit_lmpc12_model4'
