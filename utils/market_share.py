@@ -15,8 +15,8 @@ from models.logit_lmpc12_model1 import V_1, logprob_1, biogeme_1, results as res
 from models.logit_lmpc12_model2 import V_2, logprob_2, biogeme_2, results as res_mod2
 from models.logit_lmpc12_model3 import V_3, logprob_3, biogeme_3, results as res_mod3
 from models.logit_lmpc12_model4 import results_nested, lognested, biogeme_nested, nests
-# Load the dataset
 
+# Load the dataset
 df = pd.read_csv('models/lpmc12.dat', sep='\t')
 database = db.Database('lpmc12', df)
 

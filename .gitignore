@@ -1,5 +1,7 @@
 *.html
-*.pickle
+*.pickle 
+!market_shares.pickle
+!market_shares_forecasting.pickle
 *.iter
 *.toml
 
