@@ -101,10 +101,10 @@ opt4_boxcox = (
     + beta_cost * (cost_driving_fuel + driving_traffic_percent*cost_driving_ccharge)
     + boxcox_time_4 * segmented_b_time_4)
 )
-V_boxcox = {1: opt1_boxcox, 2: opt2_boxcox, 3: opt3_boxcox, 4: opt4_boxcox}
+V_3 = {1: opt1_boxcox, 2: opt2_boxcox, 3: opt3_boxcox, 4: opt4_boxcox}
 
-logprob_boxcox = loglogit(V_boxcox, None, chosen_alternative)
-biogeme_boxcox = bio.BIOGEME(database, logprob_boxcox)
-biogeme_boxcox.modelName = 'logit_lmpc12_model3'
-results = biogeme_boxcox.estimate()
+logprob_3 = loglogit(V_3, None, chosen_alternative)
+biogeme_3 = bio.BIOGEME(database, logprob_3)
+biogeme_3.modelName = 'logit_lmpc12_model3'
+results = biogeme_3.estimate()
 

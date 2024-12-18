@@ -84,11 +84,11 @@ opt4_base = (
     + beta_cost * (cost_driving_fuel + driving_traffic_percent*cost_driving_ccharge)
     + beta_travel_time * dur_driving)
 )
-V_base = {1: opt1_base, 2: opt2_base, 3: opt3_base, 4: opt4_base}
+V_0 = {1: opt1_base, 2: opt2_base, 3: opt3_base, 4: opt4_base}
 
 # logit model
-logprob_base = loglogit(V_base, None, chosen_alternative)
-biogeme_base = bio.BIOGEME(database, logprob_base)
-biogeme_base.modelName = 'logit_lpmc12_base'
-results = biogeme_base.estimate()
+logprob_0 = loglogit(V_0, None, chosen_alternative)
+biogeme_0 = bio.BIOGEME(database, logprob_0)
+biogeme_0.modelName = 'logit_lpmc12_base'
+results = biogeme_0.estimate()
 
