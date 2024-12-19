@@ -22,9 +22,9 @@ from biogeme.nests import (
     NestsForNestedLogit
 )
 
-from models_forecasting.logit_lmpc12_model_scenario1_boxcox import V_3 as V
-from models_forecasting.logit_lmpc12_model_scenario1_boxcox  import chosen_alternative as choice
-from models_forecasting.logit_lmpc12_model_scenario1_boxcox  import database
+from models_forecasting.logit_lmpc12_model_scenario2_boxcox import V_3 as V
+from models_forecasting.logit_lmpc12_model_scenario2_boxcox  import chosen_alternative as choice
+from models_forecasting.logit_lmpc12_model_scenario2_boxcox  import database
 
 
 mu_motorized = Beta('mu_motorized',3, 0, None, 0)
