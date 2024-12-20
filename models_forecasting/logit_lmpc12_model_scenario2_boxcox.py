@@ -87,7 +87,7 @@ opt2_boxcox = (
 # public transportation
 opt3_boxcox = (
     constant_3
-    + beta_cost * cost_transit*0.8
+    + beta_cost * cost_transit * 0.8 #for scenario 2
     + boxcox_time_3 * segmented_b_time_3
 )
 # car 
