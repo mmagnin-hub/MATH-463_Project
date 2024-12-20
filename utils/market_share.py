@@ -95,7 +95,6 @@ def market_share(utilities: dict[int, Expression], results, biogeme_model = None
         upper bounds of the 90% confidence interval.
     """
     if is_nested:
-        
         prob_walk = nested(utilities, None, nests, 1)
         prob_cycle = nested(utilities, None, nests, 2)
         prob_pt = nested(utilities, None, nests, 3)
