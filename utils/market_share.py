@@ -117,8 +117,6 @@ def market_share(utilities: dict[int, Expression], results) -> dict[str, Indicat
     )
     left, right = biosim.confidence_intervals(sensitivity_betas, 0.9)
 
-
-
     # Initialize market shares
     market_shares = {}
 
