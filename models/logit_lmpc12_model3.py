@@ -45,6 +45,9 @@ chosen_alternative = (travel_mode)
 # public transport travel time
 dur_pt = dur_pt_access + dur_pt_int*pt_interchanges + dur_pt_bus + dur_pt_rail
 
+# car cost
+cost_car = cost_driving_fuel + driving_traffic_percent*cost_driving_ccharge
+
 # Parameters
 constant_2 = Beta('constant_2', 0, None, None, 0)
 constant_3 = Beta('constant_3', 0, None, None, 0)
@@ -94,7 +97,7 @@ opt3_boxcox = (
 # car 
 opt4_boxcox = (
     (constant_4
-    + beta_cost * (cost_driving_fuel + driving_traffic_percent*cost_driving_ccharge) #+1.5) #for scenario 1
+    + beta_cost * (cost_car) #+1.5) #for scenario 1
     + boxcox_time_4 * segmented_b_time_4)
 )
 V_3 = {1: opt1_boxcox, 2: opt2_boxcox, 3: opt3_boxcox, 4: opt4_boxcox}
