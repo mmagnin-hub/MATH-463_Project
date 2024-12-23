@@ -149,4 +149,11 @@ def market_share(utilities: dict[int, Expression], results) -> dict[str, Indicat
         )
 
     return market_shares
+    
+# Calculer les weighted marketshares directement à partir du dataset
+def calculate_direct_marketshares(data):
+    total_weight = data['weight'].sum()
+    direct_marketshares = data.groupby('travel_mode')['weight'].sum() / total_weight
+    return direct_marketshares
 
+direct_marketshares = calculate_direct_marketshares(df)
